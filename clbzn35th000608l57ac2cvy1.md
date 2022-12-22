@@ -1,4 +1,4 @@
-# Amazon Redshift - Data ware house in the cloud☁️
+# Amazon Redshift : Data-warehouse in the cloud☁️
 
 Amazon Redshift is a fully managed, petabyte-scale data warehouse service offered by Amazon Web Services (AWS). It is designed to handle very large datasets with high performance and low cost. Redshift is based on PostgreSQL and integrates seamlessly with other AWS services, such as S3, EC2, and RDS.
 
