@@ -15,7 +15,7 @@ S3 is a great option for storing large amounts of unstructured data, such as ima
 Here is an example of how to use the AWS SDK for Python (Boto3) to create a new S3 bucket and upload a file to it:
 
 ```bash
-Copy codeimport boto3
+import boto3
 
 # Create an S3 client
 s3 = boto3.client('s3')
@@ -36,7 +36,7 @@ EBS is a good choice for storing data that requires fast, low-latency access, su
 Here is an example of how to use the AWS SDK for Python to create a new EBS volume and attach it to an EC2 instance:
 
 ```bash
-Copy codeimport boto3
+import boto3
 
 # Create an EC2 client
 ec2 = boto3.client('ec2')
@@ -62,7 +62,7 @@ One of the key advantages of using EC2 for data processing is that you have comp
 Here is an example of how to use the AWS SDK for Python to launch a new EC2 instance and run a simple data processing job on it:
 
 ```bash
-Copy codeimport boto3
+import boto3
 
 # Create an EC2 client
 ec2 = boto3.client('ec2')
@@ -102,8 +102,8 @@ EMR is well-suited for a wide range of data processing and analytics tasks, incl
 
 Here is an example of how to use the AWS SDK for Python to create an EMR cluster and run a Spark job on the cluster:
 
-```bash
-Copy codeimport boto3
+```python
+import boto3
 
 # Create an EMR client
 emr = boto3.client('emr')
@@ -180,17 +180,10 @@ emr.add_job_flow_steps(
         } 
         ] 
     )
-```
-
-### **Wait for the Spark step to complete**
-
-```bash
+#Wait for the Spark step to complete
 step_id = response['StepIds'][0] emr.wait_until_step_complete(ClusterId=cluster_id, StepId=step_id)
-```
 
-### Terminate the EMR cluster
-
-```bash
+#Terminate the EMR cluster
 emr.terminate_job_flows(JobFlowIds=[cluster_id])
 ```
 
@@ -210,8 +203,8 @@ Athena is based on Presto, an open-source SQL query engine, and supports a wide 
 
 Here is an example of how to use the AWS SDK for Python to run a query on an Athena table and print the results:
 
-```bash
-Copy codeimport boto3
+```python
+import boto3
 
 # Create an Athena client
 athena = boto3.client('athena')
@@ -250,60 +243,109 @@ QuickSight is a great option for quickly visualizing and exploring your data, as
 
 Here is an example of how to use the AWS SDK for Python to create a new QuickSight dataset from an S3 bucket and build a simple bar chart from the data:
 
-```bash
-Copy codeimport boto3
+```python
+import boto3
 
 # Create a QuickSight client
-quicksight = boto3.client('quicksight')
+quicksight = boto3.client("quicksight")
 
 # Create a new QuickSight dataset
 response = quicksight.create_data_set(
-    AwsAccountId='123456789012',
-    DataSetId='my-dataset',
-    Name='My Dataset',
+    AwsAccountId="123456789012",
+    DataSetId="my-dataset",
+    Name="My Dataset",
     PhysicalTableMap={
-        's3_table': {
-            'RelationalTable': {
-                'DataSourceArn': 'arn:aws:quicksight:us-east-1:123456789012:datasource/my-datasource',
-                'InputColumns': [
-                    {
-                        'Name': 'col1',
-                        'Type': 'INTEGER'
-                    },
-                    {
-                        'Name': 'col2',
-                        'Type': 'STRING'
-                    }
+        "s3_table": {
+            "RelationalTable": {
+                "DataSourceArn": "arn:aws:quicksight:us-east-1:123456789012:datasource/my-datasource",
+                "InputColumns": [
+                    {"Name": "col1", "Type": "INTEGER"},
+                    {"Name": "col2", "Type": "STRING"},
                 ],
-                'Name': 'My S3 Table',
-                'Schema': 'my_schema'
+                "Name": "My S3 Table",
+                "Schema": "my_schema",
             },
-            'CustomSql': {
-                'DataSourceArn': 'arn:aws:quicksight:us-east-1:123456789012:datasource/my-datasource', 'Name': 'My S3 Table', 'SqlQuery': 'SELECT * FROM s3_table' }, 'S3Source': { 'DataSourceArn': 'arn:aws:quicksight:us-east-1:123456789012:datasource/my-datasource', 'UploadSettings': { 'Format': 'CSV', 'StartFromRow': 1, 'ContainsHeader': True, 'TextQualifier': 'DOUBLE_QUOTE', 'Delimiter': 'COMMA' }, 'InputColumns': [ { 'Name': 'col1', 'Type': 'INTEGER' }, { 'Name': 'col2', 'Type': 'STRING' } ], 'Name': 'My S3 Table', 'S3Uri': 's3://my-bucket/my-data.csv' } } } )
+            "CustomSql": {
+                "DataSourceArn": "arn:aws:quicksight:us-east-1:123456789012:datasource/my-datasource",
+                "Name": "My S3 Table",
+                "SqlQuery": "SELECT * FROM s3_table",
+            },
+            "S3Source": {
+                "DataSourceArn": "arn:aws:quicksight:us-east-1:123456789012:datasource/my-datasource",
+                "UploadSettings": {
+                    "Format": "CSV",
+                    "StartFromRow": 1,
+                    "ContainsHeader": True,
+                    "TextQualifier": "DOUBLE_QUOTE",
+                    "Delimiter": "COMMA",
+                },
+                "InputColumns": [
+                    {"Name": "col1", "Type": "INTEGER"},
+                    {"Name": "col2", "Type": "STRING"},
+                ],
+                "Name": "My S3 Table",
+                "S3Uri": "s3://my-bucket/my-data.csv",
+            },
+        }
+    },
+)
 ```
 
 ### **Create a new QuickSight analysis**
 
-```bash
-response = quicksight.create_analysis( AwsAccountId='123456789012', AnalysisId='my-analysis', Name='My Analysis', DataSetIds=[ 'my-dataset' ], ThemeArn='arn:aws:quicksight:us-east-1:123456789012:theme/Default' )
+```python
+response = quicksight.create_analysis(
+    AwsAccountId="123456789012",
+    AnalysisId="my-analysis",
+    Name="My Analysis",
+    DataSetIds=["my-dataset"],
+    ThemeArn="arn:aws:quicksight:us-east-1:123456789012:theme/Default",
+)
 ```
 
 ### **Create a new QuickSight dashboard**
 
-```bash
-response = quicksight.create_dashboard( AwsAccountId='123456789012', DashboardId='my-dashboard', Name='My Dashboard', AnalysisId='my-analysis', ThemeArn='arn:aws:quicksight:us-east-1:123456789012:theme/Default' )
+```python
+response = quicksight.create_dashboard(
+    AwsAccountId="123456789012",
+    DashboardId="my-dashboard",
+    Name="My Dashboard",
+    AnalysisId="my-analysis",
+    ThemeArn="arn:aws:quicksight:us-east-1:123456789012:theme/Default",
+)
 ```
 
 ### **Add a bar chart to the dashboard**
 
-```bash
-response = quicksight.update_dashboard( AwsAccountId='123456789012', DashboardId='my-dashboard', DashboardPublishOptions={ 'AdHocFilteringOption': { 'AvailabilityStatus': 'ENABLED' }, 'ExportToCSVOption': { 'AvailabilityStatus': 'ENABLED' }, 'SheetControlsOption': { 'AvailabilityStatus': 'ENABLED' } }, Name='My Dashboard', SourceEntity={ 'SourceAnalysis': { 'DataSetReferences': [ { 'DataSetPlaceholder': 'My S3 Table', 'DataSetArn': 'arn:aws:quicksight:us-east-1:123456789012:dataset/my-dataset' } ], 'Arn': 'arn:aws:quicksight:us-east-1:123456789012:analysis/my-analysis' } }, Versions=[ { 'Action': 'CREATE_NEW', 'Description': 'Initial version' } ] )
+```python
+response = quicksight.update_dashboard(
+    AwsAccountId="123456789012",
+    DashboardId="my-dashboard",
+    DashboardPublishOptions={
+        "AdHocFilteringOption": {"AvailabilityStatus": "ENABLED"},
+        "ExportToCSVOption": {"AvailabilityStatus": "ENABLED"},
+        "SheetControlsOption": {"AvailabilityStatus": "ENABLED"},
+    },
+    Name="My Dashboard",
+    SourceEntity={
+        "SourceAnalysis": {
+            "DataSetReferences": [
+                {
+                    "DataSetPlaceholder": "My S3 Table",
+                    "DataSetArn": "arn:aws:quicksight:us-east-1:123456789012:dataset/my-dataset",
+                }
+            ],
+            "Arn": "arn:aws:quicksight:us-east-1:123456789012:analysis/my-analysis",
+        }
+    },
+    Versions=[{"Action": "CREATE_NEW", "Description": "Initial version"}],
+)
 ```
 
 ### **Get the URL of the dashboard**
 
-```bash
-response = quicksight.get_dashboard_embed_url( AwS AccountId='123456789012', DashboardId='my-dashboard', IdentityType='IAM', ResetDisabled=True ) dashboard_url = response['EmbedUrl'] print(f'Dashboard URL: {dashboard_url}')
+```python
+error: cannot format : Cannot parse: 1:51: response = quicksight.get_dashboard_embed_url( AwS AccountId='123456789012', DashboardId='my-dashboard', IdentityType='IAM', ResetDisabled=True ) dashboard_url = response['EmbedUrl'] print(f'Dashboard URL: {dashboard_url}')
 ```
 
 ### **Sagemaker**
