@@ -1,4 +1,4 @@
-# Kubernetes on Airflow
+# Kubernetes operators on Airflow
 
 Kubernetes is an open-source system for automating the deployment, scaling, and management of containerized applications. It is becoming increasingly popular for managing data pipelines, particularly those built with Apache Airflow.
 
@@ -13,7 +13,7 @@ To use Kubernetes with Airflow, you will need to set up a Kubernetes cluster and
 Here is an example of a simple Airflow DAG that uses the KubernetesExecutor to run a Python script as a Kubernetes Pod:
 
 ```python
-Copy codefrom airflow import DAG
+from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 from airflow.contrib.kubernetes.pod import PodOperator
 
@@ -61,7 +61,7 @@ To use the KubernetesPodOperator, you will need to specify the image to be used 
 Here is an example of how you can use the KubernetesPodOperator to run a task that processes data from a file stored in a Google Cloud Storage bucket:
 
 ```python
-Copy codefrom airflow import DAG
+from airflow import DAG
 from airflow.contrib.operators.kubernetes_pod_operator import KubernetesPodOperator
 
 default_args = {
@@ -118,7 +118,7 @@ To scale your pipeline horizontally, you can use the KubernetesHorizontalPodAuto
 Here is an example of how you can use the KubernetesHorizontalPodAutoscaler to scale your pipeline:
 
 ```python
-Copy codefrom airflow import DAG
+from airflow import DAG
 from airflow.contrib.operators.kubernetes_pod_operator import KubernetesPodOperator
 from airflow.contrib.kubernetes.pod import Pod
 from airflow.contrib.kubernetes.pod_launcher import PodLauncher
