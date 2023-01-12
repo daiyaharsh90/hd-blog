@@ -99,8 +99,7 @@ HAVING
 
 This query uses join to combine the orders and order\_items tables on the order\_id column, and join with the product table on the product\_id column, then it uses the GROUP BY clause to group the results by product\_id, and the HAVING clause to filter out only the products that have sold more than 100 units. The SELECT clause lists the product\_id, the total quantity sold, and the product name.
 
-1. Using COUNT() and GROUP BY :
-    
+### Using COUNT() and GROUP BY :
 
 ```sql
 SELECT 
@@ -127,7 +126,7 @@ ORDER BY name;
 
 This query uses the UNION operator to combine the results of two separate SELECT statements, one for customers and one for employees, and orders the final result set by name. UNION operator will remove duplicates if present.
 
-### Recursive Queries
+### Recursive Queries:
 
 A recursive query is a type of query that uses a self-referencing mechanism to perform a task. One common use case for a recursive query is to traverse a hierarchical data structure, such as a tree or a graph.
 
@@ -153,7 +152,7 @@ Also, it's worth noting that not all SQL implementations support recursion, but 
 
 These are just a few examples of the many powerful features of SQL, and the types of queries that you can create using them. Of course, the specific details of the queries will depend on the structure of your database and the information you are trying to retrieve, but these examples should give you an idea of what is possible.
 
-### Some resources to further dive into this topic -
+### Resources:
 
 [Kaggle - Advanced SQL](https://www.kaggle.com/learn/advanced-sql)
 
