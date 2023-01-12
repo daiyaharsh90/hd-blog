@@ -153,7 +153,7 @@ Also, it's worth noting that not all SQL implementations support recursion, but 
 
 These are just a few examples of the many powerful features of SQL, and the types of queries that you can create using them. Of course, the specific details of the queries will depend on the structure of your database and the information you are trying to retrieve, but these examples should give you an idea of what is possible.
 
-Some resources to further dive into this topic -
+### Some resources to further dive into this topic -
 
 [Kaggle - Advanced SQL](https://www.kaggle.com/learn/advanced-sql)
 
