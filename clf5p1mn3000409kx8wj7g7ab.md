@@ -8,15 +8,14 @@ tags: cassandra, nosql, python, databases, scylladb
 ---
 
 Recently I read this article where Discord migrated its messages cluster from Cassandra to ScyllaDB, it reduced message latencies from 200 milliseconds to 5 milliseconds, which got me intrigued to explore ScyllaDB.  
-[How Discord Migrated Trillions of Messages to ScyllaDB](https://thenewstack.io/how-discord-migrated-trillions-of-messages-to-scylladb/)  
-  
+[How Discord Migrated Trillions of Messages to ScyllaDB](https://thenewstack.io/how-discord-migrated-trillions-of-messages-to-scylladb/)
+
 Scylla is an open-source distributed NoSQL database that is compatible with Apache Cassandra, but it provides faster performance and lower latencies. Scylla is based on the C++ programming language, and it has been designed to take advantage of modern hardware that is high-core count CPUs and fast SSDs. Scylla is also designed to be scalable, fault-tolerant, and highly available.
 
 In this blog post, we will look at the steps to use ScyllaDB, starting from installation to creating and querying data using the Scylla Query Language (CQL).
 
 ## Prerequisites:
 
-  
 Before getting started with ScyllaDB, ensure that you have the following prerequisites:  
 • A Linux machine running on the Ubuntu operating system  
 • JDK 11 or higher installed  
@@ -124,7 +123,7 @@ This command deletes the row where the user\_id is d7a57b06-28a7-4eb2-acad-f4fe3
 Now that we've covered the basics of Scylla DB, let's take a look at some sample code using the Python driver for Scylla DB.
 
 ```python
-sqlCopy codefrom cassandra.cluster import Cluster
+from cassandra.cluster import Cluster
 from cassandra.auth import PlainTextAuthProvider
 
 # Connect to the Scylla cluster
@@ -147,7 +146,7 @@ This code connects to the Scylla cluster and inserts a row into the "mytable" ta
 ### Creating a Table:
 
 ```python
-pythonCopy codefrom cassandra.cluster import Cluster
+from cassandra.cluster import Cluster
 
 cluster = Cluster(['127.0.0.1'])
 session = cluster.connect()
@@ -172,7 +171,7 @@ In this example, we first connect to the Scylla cluster using the Cluster object
 ### Inserting Data:
 
 ```python
-pythonCopy codefrom cassandra.cluster import Cluster
+from cassandra.cluster import Cluster
 
 cluster = Cluster(['127.0.0.1'])
 session = cluster.connect('mykeyspace')
@@ -191,7 +190,7 @@ In this example, we insert two rows into the "users" table. We use a parameteriz
 ### Querying Data:
 
 ```python
-pythonCopy codefrom cassandra.cluster import Cluster
+from cassandra.cluster import Cluster
 
 cluster = Cluster(['127.0.0.1'])
 session = cluster.connect('mykeyspace')
@@ -210,7 +209,7 @@ In this example, we query the "users" table for the row with user\_id = 1. We us
 ### Updating Data:
 
 ```python
-pythonCopy codefrom cassandra.cluster import Cluster
+from cassandra.cluster import Cluster
 
 cluster = Cluster(['127.0.0.1'])
 session = cluster.connect('mykeyspace')
@@ -227,7 +226,7 @@ In this example, we update the email address for the row with user\_id = 1. We u
 ### Deleting Data:
 
 ```python
-pythonCopy codefrom cassandra.cluster import Cluster
+from cassandra.cluster import Cluster
 
 cluster = Cluster(['127.0.0.1'])
 session = cluster.connect('mykeyspace')
@@ -243,11 +242,6 @@ In this example, we delete the row with user\_id = 1 from the "users" table. We 
 
 ## **Conclusion**
 
-Scylla DB is a powerful NoSQL database that is designed for high performance and scalability. With its support for CQL and its Python driver, it is easy to get started with Scylla DB and start building high-performance applications that can handle massive amounts of data.  
-  
-Conclusion:  
 ScyllaDB is a fast, scalable, and fault-tolerant NoSQL database. In this blog post, we went through the steps to install and use ScyllaDB on Linux. We also looked at the basics of CQL commands to create, query, update and delete data from a table. ScyllaDB has a lot of features that we did not cover in this blog post, such as data modeling, high availability, and performance tuning. In the future, we will cover these topics in more detail.
-
-**RegenerateShareNew Chat**
 
 ---
