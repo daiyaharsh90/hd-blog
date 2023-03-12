@@ -25,8 +25,8 @@ Before getting started with ScyllaDB, ensure that you have the following prerequ
 
 ## Steps:
 
-1. Install ScyllaDB:  
-      
+1. Install ScyllaDB:
+    
     To install ScyllaDB, we need to add the Scylla repository to our Ubuntu system. Then update the package list and finally run the command to install Scylla.  
     The following commands install the ScyllaDB 4.4 version on Ubuntu 20.04.
     
