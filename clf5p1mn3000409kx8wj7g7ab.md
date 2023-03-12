@@ -26,6 +26,7 @@ Before getting started with ScyllaDB, ensure that you have the following prerequ
 ## Steps:
 
 1. Install ScyllaDB:  
+      
     To install ScyllaDB, we need to add the Scylla repository to our Ubuntu system. Then update the package list and finally run the command to install Scylla.  
     The following commands install the ScyllaDB 4.4 version on Ubuntu 20.04.
     
@@ -105,7 +106,7 @@ SET username = 'peter'
 WHERE user_id = d7a57b06-28a7-4eb2-acad-f4fe3a529adf;Copy Code
 ```
 
-Here, we updated the username from "john" to "peter" where the user\_id is d7a57b06-28a7-4eb2-acad-f4fe3a529adf.
+Here, we updated the username from "john" to "peter" where the user\_id is `d7a57b06-28a7-4eb2-acad-f4fe3a529adf.`
 
 1. Delete data:  
     To delete any data from the table, we can use the CQL command DELETE.
@@ -116,7 +117,7 @@ DELETE FROM myKeyspace.users
 WHERE user_id = d7a57b06-28a7-4eb2-acad-f4fe3a529adf;Copy Code
 ```
 
-This command deletes the row where the user\_id is d7a57b06-28a7-4eb2-acad-f4fe3a529adf.
+This command deletes the row where the user\_id is `d7a57b06-28a7-4eb2-acad-f4fe3a529adf`.
 
 ## Sample Code w/ Python Driver:
 
