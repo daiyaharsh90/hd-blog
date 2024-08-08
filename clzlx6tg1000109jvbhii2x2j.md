@@ -1,5 +1,7 @@
 ---
 title: "Introduction to Data Ops: Optimizing Data Flow in Modern Organizations"
+seoTitle: "Data Ops: Streamlining Modern Data Management"
+seoDescription: "Optimize data flow and drive growth with Data Ops, focusing on collaboration, automation, and security in modern organizations"
 datePublished: Tue Jun 11 2019 05:00:00 GMT+0000 (Coordinated Universal Time)
 cuid: clzlx6tg1000109jvbhii2x2j
 slug: introduction-to-data-ops-optimizing-data-flow-in-modern-organizations
