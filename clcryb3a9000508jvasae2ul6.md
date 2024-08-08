@@ -1,4 +1,12 @@
-# Apache Cassandra w/ Python
+---
+title: "Apache Cassandra w/ Python"
+datePublished: Wed Jun 08 2022 05:00:00 GMT+0000 (Coordinated Universal Time)
+cuid: clcryb3a9000508jvasae2ul6
+slug: apache-cassandra-w-python
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1673458977757/7b12323a-32e5-4f87-bb41-b56a229cd787.jpeg
+tags: cassandra, nosql, python, databases, apache
+
+---
 
 Apache Cassandra is a highly scalable, high-performance, and fault-tolerant NoSQL database. It is designed to handle large amounts of data across many commodity servers, providing high availability and reliability with no single point of failure. In this blog post, we will discuss how to use Apache Cassandra in data engineering using Python code examples.
 
@@ -95,4 +103,4 @@ As always, it is worth mentioning that a production-ready deployment needs more 
 
 Also check out this excellent resource to getting started with Apache Cassandra from [freecodecamp](https://www.freecodecamp.org/)
 
-%[https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DJ-cSy5MeMOA&psig=AOvVaw1qAtl80e1pMpb8Y43Iqqk6&ust=1673545209528000&source=images&cd=vfe&ved=2ahUKEwjCu43vh8D8AhUBU6QEHUC6BlMQr4kDegUIARDPAQ]
+%[https://www.youtube.com/watch?v=J-cSy5MeMOA]
